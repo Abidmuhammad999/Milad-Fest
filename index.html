@@ -11,135 +11,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            /* background-color: #f5f5f5; */
-            color: #0B5345;
-        }
-        
-        .background-image {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4EsacbrZq2U31aCLHjuTtYPqqTFDbBe7pIA&usqp=CAU');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: fixed;
-            top: 0;
-            left: 0;
-            margin: 0;
-            padding: 0;
-            /* height: 100vh; */
-            z-index: -1;
-        }
-        
-        .container {
-            background: rgba(11, 83, 69, 0.5);
-            /* Background color in green with higher alpha (adjust the alpha value as needed) */
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #440505;
-            transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-        }
-        
-        .container:hover {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            font-weight: bold;
-        }
-        
-        .btn-primary {
-            margin-top: 20px;
-            background-color: #007bff;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        
-        .program-checkbox {
-            margin-right: 10px;
-            opacity: 0.7;
-            transform: scale(1.2);
-        }
-        
-        .program-checkbox:checked {
-            opacity: 1;
-            transform: scale(1.2);
-            background-color: green;
-            /* Change background color to green when checked
-    */
-            border-color: green;
-            /* Change border color to green when checked */
-        }
-        
-        input {
-            background-color: rgba(255, 255, 255, 0.2);
-            /* Set the background color with opacity */
-            font-weight: bold;
-            /* Make the text bold */
-        }
-        
-        #confirmationBox {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 1000;
-            /* Ensure it's on top of other elements */
-        }
-        /* Style for confirmation
-    data display */
-        
-        #confirmationData {
-            margin-top: 10px;
-        }
-        
-        #thankYouMessage {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        .cute-warning {
-            background-color: #F1948A;
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px 20px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease-in-out;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="background-image col-12 vh-100"></div>
     <div class="container   m-auto p-4 col-md-5 col-11">
 
-        <h1 class=" text-center">Nizamia Madrasa</h1>
-        <h3 class="mb-4 text-center " style="font-family: 'Dancing Script', cursive;">Milad Fest - 2023</h3>
+        <hr style="border-top: 1px solid #ffffff; margin: 20px 0;">
+        <h2 class="text-center" style="font-family: 'Roboto Slab', serif;">NIZAMIA MADRASA</h2>
+
+        <h2 class="mb-4 text-center" style="font-family: 'Righteous', cursive;">MILAD FEST - 2023</h2>
+        <hr style="border-top: 1px solid #ffffff; margin-bottom: 20px;">
         <div class="form-group">
-            <label for="classSelect">Select Class:</label>
+            <label for="classSelect">Select Class</label>
             <select class="form-control" id="classSelect" name="classSelect" onchange="updateProgramOptions()">
         <option value="Select Class">Select Class</option>
         <option value="Level 1A">Level 1A</option>
@@ -151,20 +37,20 @@
         </div>
         <div class="form-group">
             <label for="name">Enter name</label>
-            <input type="text" class="form-control" id="name" value="mmm" placeholder="Enter name">
-            <div id="nameWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter your full name.
-            </div>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" oninput="capitalizeFirstLetter(this)">
+            <div id="nameWarning" class="font-weight-bold cute-warning" style="display: none;">Please enter your full name.</div>
         </div>
+
         <div class="form-group">
             <label for="dob">Enter date of birth</label>
-            <input type="text" class="form-control" id="dob" value="22-22-2222" placeholder="DD-MM-YYYY">
+            <input type="text" class="form-control" id="dob" placeholder="DD-MM-YYYY">
             <div id="dobWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter your Date Of Birth.
             </div>
         </div>
         <div class="form-group">
             <label for="adno">Admission no</label>
-            <input type="text" class="form-control" id="adno" value="NZMP0000" placeholder="NZMP0000" oninput="this.value = this.value.toUpperCase();">
-            <div id="adnoWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter a valid Admission number between NZMP0000 and NZMP1234</div>
+            <input type="text" class="form-control" id="adno" placeholder="NZMP00000" oninput="this.value = this.value.toUpperCase();">
+            <div id="adnoWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter a valid Admission number between NZMP00000 and NZMP12345</div>
 
         </div>
         <div class="form-group" id="programCheckboxes">
@@ -188,6 +74,8 @@
             <br>
             <div id="programWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select at least one program.
             </div>
+            <div id="drwingWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select one more program.
+            </div>
         </div>
         <button class="btn btn-primary col-12 " style="background-color: #138D75!important;" onclick="submitData()">Submit</button>
     </div>
@@ -207,201 +95,11 @@
     </div>
 
 
-
-
-
-
-
-
-
-
     <!-- Include Bootstrap JS and your custom script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function submitData() {
-            // Clear all warnings at the beginning
-            document.getElementById('classWarning').style.display = 'none';
-            document.getElementById('nameWarning').style.display = 'none';
-            document.getElementById('dobWarning').style.display = 'none';
-            document.getElementById('programWarning').style.display = 'none';
-            document.getElementById('adnoWarning').style.display = 'none';
-
-            var selectedClass = document.getElementById('classSelect').value;
-            var selectedPrograms = getSelectedPrograms();
-            var name = document.getElementById('name').value;
-            var dob = document.getElementById('dob').value;
-            var adno = document.getElementById('adno').value;
-            var adnoWarning = document.getElementById('adnoWarning');
-
-            var adnoPattern = /^NZMP\d{4}$/;
-
-            // Rest of your form submission logic
-            if (selectedClass === "Select Class") {
-                document.getElementById('classWarning').style.display = 'block';
-                return;
-            } else {
-                document.getElementById('classWarning').style.display = 'none';
-            }
-
-            if (!name) {
-                document.getElementById('nameWarning').style.display = 'block';
-                return;
-            } else {
-                document.getElementById('nameWarning').style.display = 'none';
-            }
-            if (!dob) {
-                document.getElementById('dobWarning').style.display = 'block';
-                return;
-            } else {
-                document.getElementById('dobWarning').style.display = 'none';
-            }
-            if (!adno.match(adnoPattern)) {
-                adnoWarning.style.display = 'block';
-                return;
-            } else {
-                adnoWarning.style.display = 'none';
-            }
-            if (selectedPrograms.length === 0) {
-                document.getElementById('programWarning').style.display = 'block';
-                return;
-            } else {
-                document.getElementById('programWarning').style.display = 'none';
-            }
-
-            // Display a confirmation box (if needed)
-            document.getElementById('confirmationBox').style.display = 'block';
-            var confirmationData = document.getElementById('confirmationData');
-            confirmationData.innerHTML = `
-                    <p><strong>Select Class:</strong> ${selectedClass}</p>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Date of Birth:</strong> ${dob}</p>
-                    <p><strong>Admission No:</strong> ${adno}</p>
-                    <p><strong>Selected Programs:</strong> ${selectedPrograms.join(', ')}</p>
-                `;
-
-            // Prevent the actual form submission for now
-            return false;
-        }
-
-        function cancelSubmission() {
-            document.getElementById('confirmationBox').style.display = 'none';
-        }
-
-        function confirmSubmission() {
-            console.log('Confirmation function called.'); // Debugging
-            // Retrieve data from the confirmation box
-            var selectedClass = document.getElementById('classSelect').value;
-            var selectedPrograms = getSelectedPrograms();
-            var name = document.getElementById('name').value;
-            var dob = document.getElementById('dob').value;
-            var adno = document.getElementById('adno').value;
-
-            // Create a data object to send to Google Apps Script
-            var data = {
-                selectedClass: selectedClass,
-                selectedPrograms: selectedPrograms,
-                name: name,
-                dob: dob,
-                adno: adno
-            };
-
-            // Send the data as a JSON string to your Google Apps Script web app
-            fetch('https://script.google.com/macros/s/AKfycbzmifBJFsvV5ZYOS3lg0tbn7A_B8biAhpaKhSecnhE2Pvll5Ap-jZpDCO7C5kL7oz9mZQ/exec', {
-                    method: 'POST',
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.text())
-                .then(result => {
-                    console.log(result);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-
-                });
-
-            // Hide the confirmation box after submission
-            document.getElementById('confirmationBox').style.display = 'none';
-            document.getElementById('thankYouMessage').style.display = 'block';
-            var thankYouText = document.getElementById('thankYouText');
-            thankYouText.innerHTML = `<div style="font-family: 'Charm', cursive;">Thank you, <span style="color: #D4EFDF;">${name}</span>, for being a part of this celebration! All the best for your success in the Milad fest.</div>`;
-
-            // Set a timeout to hide the thank you message after 2 seconds (2000 milliseconds)
-            setTimeout(function() {
-                document.getElementById('thankYouMessage').style.display = 'none';
-            }, 9000);
-
-
-            document.getElementById('name').value = '';
-            document.getElementById('adno').value = '';
-            document.getElementById('dob').value = '';
-            resetProgramCheckboxes();
-        }
-
-
-        function
-        updateProgramOptions() {
-            var classSelect = document.getElementById('classSelect');
-            var selectedClass = classSelect.value;
-            var quranCheckboxContainer = document.getElementById('quranCheckboxContainer');
-
-            if (selectedClass === 'Level 1A' || selectedClass === 'Level 1B') {
-                quranCheckboxContainer.style.display = 'none';
-            } else {
-                quranCheckboxContainer.style.display = 'block';
-            }
-        }
-
-        function getSelectedPrograms() {
-            var programCheckboxes = document.querySelectorAll('.program-checkbox');
-            var selectedPrograms = [];
-            programCheckboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    selectedPrograms.push(checkbox.value);
-                }
-            });
-            return selectedPrograms;
-        }
-
-        function resetProgramCheckboxes() {
-            var programCheckboxes = document.querySelectorAll('.program-checkbox');
-            programCheckboxes.forEach(function(checkbox) {
-                checkbox.checked = false;
-            });
-        }
-
-        function formatNumber(num, from, limit) {
-            num = Number(num) > from && Number(num) < 10 && num.length == 1 ? "0" + num : num;
-            if (Number(num) > limit) {
-                num = num.substr(1, 2);
-                num = Number(num) > from && Number(num) < 10 && num.length == 1 ? "0" + num : num;
-            }
-            return num;
-        }
-
-        dateElement = document.querySelector("#dob");
-        dateElement.addEventListener('input', function() {
-            var dateValue = dateElement.value;
-            if (/\D$/.test(dateValue)) {
-                dateValue = dateValue.substr(0, dateValue.length - 3);
-            }
-            dateValue = dateValue.replaceAll(" ", "");
-            var arr = dateValue.split('-');
-
-            if (arr[0]) arr[0] = formatNumber(arr[0], 3, 31);
-            if (arr[1]) arr[1] = formatNumber(arr[1], 1, 12);
-
-            var result = arr.map(function(val, index) {
-                return val.length == 2 && index < 2 ? val + ' - ' : val;
-            });
-            dateElement.value = result.join('').substr(0, 14);
-        });
-        //------------------------------------- Hypen in Input date box-----------------------------------------------
-        dateElement.addEventListener('blur', function() {
-            dateElement.value = dateElement.value.replaceAll(" ", "");
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

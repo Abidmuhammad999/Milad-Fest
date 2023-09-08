@@ -1,0 +1,119 @@
+body {
+    /* background-color: #f5f5f5; */
+    color: #0B5345;
+}
+
+.background-image {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4EsacbrZq2U31aCLHjuTtYPqqTFDbBe7pIA&usqp=CAU');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    z-index: -1;
+}
+
+.container {
+    background: rgba(11, 83, 69, 0.5);
+    /* Background color in green with higher alpha */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    /* Change text color to white for better visibility on green background */
+    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.container:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.btn-primary {
+    margin-top: 20px;
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.program-checkbox {
+    margin-right: 10px;
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+.program-checkbox:checked {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: green;
+    /* Change background color to green when checked
+*/
+    border-color: green;
+    /* Change border color to green when checked */
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Set the background color with opacity */
+    font-weight: bold;
+    /* Make the text bold */
+}
+
+#confirmationBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+    /* Ensure it's on top of other elements */
+}
+
+
+/* Style for confirmation
+data display */
+
+#confirmationData {
+    margin-top: 10px;
+}
+
+#thankYouMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cute-warning {
+    background-color: #F1948A;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+}
