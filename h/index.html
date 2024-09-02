@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <base target="_top">
@@ -13,93 +13,79 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Body background color */
+        
+        body {
+            background-color: #009688;
+            /* Change the background color to a teal shade */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Header styles */
+        
+        header {
+            background-color: #00796B;
+            /* A darker teal for the header */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        /* Container styles */
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center text horizontally */
+            justify-content: center;
+            /* Center text vertically */
+            flex-grow: 1;
+            /* Allows the container to expand and push the footer to the bottom */
+        }
+        /* Footer styles */
+        
+        footer {
+            background-color: #00796B;
+            /* Matching footer color with the header */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Paragraph styles */
+        
+        p {
+            color: white;
+            /* Text color is white */
+            font-size: 18px;
+            /* Font size is increased to 18px */
+            text-align: center;
+            /* Center text horizontally within the <p> element */
+            font-weight: bold;
+            /* Make the text bold */
+        }
+    </style>
 </head>
 
 <body>
-    <div class="background-image col-12 vh-100"></div>
-    <div class="container   m-auto p-4 col-md-5 col-11">
-
+    <header>
         <hr style="border-top: 1px solid #ffffff; margin: 20px 0;">
         <h3 class="text-center" style="font-family: 'Roboto Slab', serif;">NIZAMIA MADRASA</h3>
 
         <h3 class="mb-4 text-center" style="font-family: 'Righteous', cursive;">MILAD FEST - 2023</h3>
         <hr style="border-top: 1px solid #ffffff; margin-bottom: 20px;">
-        <div class="form-group">
-            <label for="classSelect">Select Class</label>
-            <select class="form-control" id="classSelect" name="classSelect" onchange="updateProgramOptions()">
-        <option value="Select Class">Select Class</option>
-        <option value="Level 1A">Level 1A</option>
-        <option value="Level 1B">Level 1B</option>
-        <option value="Level 2">Level 2</option>
-        <option value="Level 3">Level 3</option>
-      </select>
-            <div id="classWarning" class="font-weight-bold cute-warning " style="display: none;">Please select a class.</div>
-        </div>
-        <div class="form-group">
-            <label for="name">Enter name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your Full name" oninput="capitalizeFirstLetter(this)">
-            <div id="nameWarning" class="font-weight-bold cute-warning" style="display: none;">Please enter your full name.</div>
-        </div>
+    </header>
 
-        <div class="form-group">
-            <label for="dob">Enter date of birth</label>
-            <input type="text" class="form-control" id="dob" placeholder="DD-MM-YYYY">
-            <div id="dobWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter your Date Of Birth.
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="adno">Admission no</label>
-            <input type="text" class="form-control" id="adno" placeholder="NZMP00000" oninput="this.value = this.value.toUpperCase();">
-            <div id="adnoWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter a valid Admission number between NZMP00000 and NZMP12345</div>
-
-        </div>
-        <div class="form-group" id="programCheckboxes">
-            <label>Select Program</label>
-            <br>
-            <div id="quranCheckboxContainer">
-                <label><input type="checkbox" class="program-checkbox" name="programQuran" value="Quran"
-            id="programQuran"> Quran Recitation</label>
-            </div>
-            <!-- <br> -->
-            <label><input type="checkbox" class="program-checkbox" name="programSong" value="Song"> Song</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programSpeech" value="Speech/Story"> Speech/Story Telling</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programMala" value="Mala"> Mala Recitation</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programGroupSong" value="Group Song"> Group
-        Song</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programDrawing" value="Drawing"> Drawing</label>
-            <br>
-            <div id="programWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select at least one program.
-            </div>
-            <div id="drwingWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select one more program.
-            </div>
-        </div>
-        <button class="btn btn-primary col-12 " style="background-color: #138D75!important;" onclick="submitData()">Submit</button>
-    </div>
-    <div id="confirmationBox" class="col-md-4 col-11" style="background-color: #D4EDDA; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-        <p style="color: #155724; font-weight: bold; font-size: 18px; text-align: center;">Are you sure you want to submit? You can't edit after submission.</p>
-        <div id="confirmationData">
-            <!-- Data will be displayed here -->
-        </div>
-        <div style="margin-top: 20px; text-align: center;">
-            <button class="btn btn-secondary" style="background-color: #155724; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; color: white;" onclick="cancelSubmission()">Cancel</button>
-            <button class="btn btn-success" style="background-color: #28A745; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; color: white;" onclick="confirmSubmission()">OK</button>
-        </div>
+    <div class="background-image col-12 vh-100"></div>
+    <div class="container   m-auto p-4 col-md-5 col-11">
+        <p>Milad Fest 2023 registration is closed. Thank you for your participation and support. We hope to see you again in the future! 🎉🙏</p>
     </div>
 
-    <div id="thankYouMessage" class="col-11 col-md-4" style="display: none; background-color: #16A085; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); margin-top: 20px;">
-        <p id="thankYouText" style="color:#D4EFDF ; font-weight: bold; font-size: 20px;"></p>
-    </div>
-
-
-    <!-- Include Bootstrap JS and your custom script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <footer> &copy; NIZAMIA MADRASA</footer>
 </body>
 
 </html>
