@@ -95,7 +95,7 @@ function confirmSubmission() {
     };
 
     // Send the data as a JSON string to your Google Apps Script web app
-    fetch('https://script.google.com/macros/s/AKfycbzmifBJFsvV5ZYOS3lg0tbn7A_B8biAhpaKhSecnhE2Pvll5Ap-jZpDCO7C5kL7oz9mZQ/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbxXlL5B1di5pIMf36flgb245w6KjsiozAqhtxOeT2c4OIPmvh0vadvLeGkNjk2dVOX--A/exec', {
             method: 'POST',
             body: JSON.stringify(data)
         })
@@ -134,7 +134,7 @@ updateProgramOptions() {
     var selectedClass = classSelect.value;
     var quranCheckboxContainer = document.getElementById('quranCheckboxContainer');
 
-    if (selectedClass === 'Level 1A' || selectedClass === 'Level 1B') {
+    if (selectedClass === 'Level 1A' || selectedClass === 'PRE 1') {
         quranCheckboxContainer.style.display = 'none';
     } else {
         quranCheckboxContainer.style.display = 'block';

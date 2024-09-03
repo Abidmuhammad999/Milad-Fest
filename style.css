@@ -25,14 +25,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: #fff;
     /* Change text color to white for better visibility on green background */
-    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+    /* transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out; */
 }
 
-.container:hover {
+/* .container:hover {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-}
+} */
 
 .form-group {
     margin-bottom: 20px;
