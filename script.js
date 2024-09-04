@@ -168,27 +168,27 @@ function formatNumber(num, from, limit) {
     return num;
 }
 
-dateElement = document.querySelector("#dob");
-dateElement.addEventListener('input', function() {
-    var dateValue = dateElement.value;
-    if (/\D$/.test(dateValue)) {
-        dateValue = dateValue.substr(0, dateValue.length - 3);
-    }
-    dateValue = dateValue.replaceAll(" ", "");
-    var arr = dateValue.split('-');
+// dateElement = document.querySelector("");
+// dateElement.addEventListener('input', function() {
+//     var dateValue = dateElement.value;
+//     if (/\D$/.test(dateValue)) {
+//         dateValue = dateValue.substr(0, dateValue.length - 3);
+//     }
+//     dateValue = dateValue.replaceAll(" ", "");
+//     var arr = dateValue.split('-');
 
-    if (arr[0]) arr[0] = formatNumber(arr[0], 3, 31);
-    if (arr[1]) arr[1] = formatNumber(arr[1], 1, 12);
+//     if (arr[0]) arr[0] = formatNumber(arr[0], 3, 31);
+//     if (arr[1]) arr[1] = formatNumber(arr[1], 1, 12);
 
-    var result = arr.map(function(val, index) {
-        return val.length == 2 && index < 2 ? val + ' - ' : val;
-    });
-    dateElement.value = result.join('').substr(0, 14);
-});
-//------------------------------------- Hypen in Input date box-----------------------------------------------
-dateElement.addEventListener('blur', function() {
-    dateElement.value = dateElement.value.replaceAll(" ", "");
-});
+//     var result = arr.map(function(val, index) {
+//         return val.length == 2 && index < 2 ? val + ' - ' : val;
+//     });
+//     dateElement.value = result.join('').substr(0, 14);
+// });
+// //------------------------------------- Hypen in Input date box-----------------------------------------------
+// dateElement.addEventListener('blur', function() {
+//     dateElement.value = dateElement.value.replaceAll(" ", "");
+// });
 
 function capitalizeFirstLetter(input) {
     var words = input.value.toLowerCase().split(' ');

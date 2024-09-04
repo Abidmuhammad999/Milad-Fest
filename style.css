@@ -1,10 +1,16 @@
-body {
-    /* background-color: #f5f5f5; */
-    color: #0B5345;
-}
+/* style.css */
 
+/* Body styles */
+body {
+    color: #e2b263; /* Light Gold text color */
+    background-color: #252627; /* Dark Gray background for the body */
+}
+hr{
+    border-top: 1px solid #e2b263;
+}
+/* Background image */
 .background-image {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4EsacbrZq2U31aCLHjuTtYPqqTFDbBe7pIA&usqp=CAU');
+    background-image: url('mosq.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,46 +19,63 @@ body {
     left: 0;
     margin: 0;
     padding: 0;
-    /* height: 100vh; */
     z-index: -1;
 }
 
+/* Container styles */
 .container {
-    background: rgba(11, 83, 69, 0.5);
-    /* Background color in green with higher alpha */
+    background: rgba(37, 38, 39, 0.7); /* Dark Gray with higher alpha */
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
-    /* Change text color to white for better visibility on green background */
-    /* transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out; */
+    color: #e2b263; /* Light Gold text color for better visibility on Dark Gray background */
 }
 
-/* .container:hover {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-} */
-
+/* Form group */
 .form-group {
     margin-bottom: 20px;
 }
 
+/* Label styles */
 label {
     font-weight: bold;
     text-transform: capitalize;
+    color: #e2b263; /* Light Gold */
 }
 
+/* Button styles */
 .btn-primary {
     margin-top: 20px;
-    background-color: #007bff;
+    background-color: #004D26; /* Deep Emerald Green */
     border: none;
+    color: #e2b263; /* Light Gold text color */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #003d1a; /* Slightly darker shade of Deep Emerald Green */
 }
 
+.btn-secondary {
+    background-color: #4B2E2E; /* Dark Brown */
+    border: none;
+    color: #e2b263; /* Light Gold text color */
+}
+
+.btn-secondary:hover {
+    background-color: #3e1f1f; /* Slightly darker shade of Dark Brown */
+}
+
+.btn-success {
+    background-color: #FFD700; /* Rich Gold */
+    border: none;
+    color: #252627; /* Dark Gray text color */
+}
+
+.btn-success:hover {
+    background-color: #e6c200; /* Slightly darker shade of Rich Gold */
+}
+
+/* Checkbox styles */
 .program-checkbox {
     margin-right: 10px;
     opacity: 0.7;
@@ -62,52 +85,57 @@ label {
 .program-checkbox:checked {
     opacity: 1;
     transform: scale(1.2);
-    background-color: green;
-    /* Change background color to green when checked
-*/
-    border-color: green;
-    /* Change border color to green when checked */
+    background-color: #FFD700; /* Rich Gold */
+    border-color: #FFD700; /* Rich Gold */
 }
 
+/* Input styles */
 input {
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Set the background color with opacity */
+    background-color: transparent; /* Transparent background */
     font-weight: bold;
-    /* Make the text bold */
+    border: 1px solid #004D26; /* Deep Emerald Green border */
+    color: #e2b263; /* Light Gold text color */
 }
 
+/* Confirmation box */
 #confirmationBox {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #252627; /* Dark Gray background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 1000;
-    /* Ensure it's on top of other elements */
+    color: #e2b263; /* Light Gold text color */
 }
 
-
-/* Style for confirmation
-data display */
-
+/* Confirmation data */
 #confirmationData {
     margin-top: 10px;
 }
 
+/* Thank you message */
 #thankYouMessage {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #004D26; /* Deep Emerald Green */
+    color: #e2b263; /* Light Gold text color */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
 }
 
+/* Warning messages */
 .cute-warning {
-    background-color: #F1948A;
-    color: #fff;
+    background-color: #FFD700; /* Rich Gold */
+    color: #252627; /* Dark Gray text color */
     border-radius: 5px;
     padding: 10px 20px;
     text-align: center;
@@ -116,4 +144,51 @@ data display */
     margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease-in-out;
+}
+
+
+
+.styled-input {
+    width: 100%;
+
+    border: 2px solid #004D26; /* Deep Emerald Green border */
+    border-radius: 5px;
+    background-color: #FFF5E1; /* Cream background for input */
+    color: #4B2E2E; /* Dark Brown text */
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.styled-input::placeholder {
+    color: #4B2E2E; /* Dark Brown placeholder text */
+}
+
+.styled-input:focus {
+    border-color: #FFD700; /* Rich Gold border on focus */
+}
+
+.styled-select {
+    width: 100%;
+  
+    padding: 10px;
+    border: 2px solid #004D26; /* Deep Emerald Green border */
+    border-radius: 5px;
+    background-color: #FFF5E1; /* Cream background for select */
+    color: #4B2E2E; /* Dark Brown text */
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    appearance: none; /* Remove default styling */
+    transition: border-color 0.3s ease;
+}
+
+.styled-select:focus {
+    border-color: #FFD700; /* Rich Gold border on focus */
+}
+
+.styled-select option {
+    background-color: #FFF5E1; /* Cream background for options */
+    color: #4B2E2E; /* Dark Brown text */
 }
