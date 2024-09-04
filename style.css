@@ -46,19 +46,25 @@ label {
 /* Button styles */
 .btn-primary {
     margin-top: 20px;
-    background-color: #004D26; /* Deep Emerald Green */
+    background-color: #C07F00; 
     border: none;
-    color: #e2b263; /* Light Gold text color */
+    color: #FFF7D4; 
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .btn-primary:hover {
-    background-color: #003d1a; /* Slightly darker shade of Deep Emerald Green */
+    background-color: #624305 /* Slightly darker shade of Deep Emerald Green */
 }
 
 .btn-secondary {
     background-color: #4B2E2E; /* Dark Brown */
     border: none;
-    color: #e2b263; /* Light Gold text color */
+    color: #e2b263;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .btn-secondary:hover {
@@ -66,7 +72,7 @@ label {
 }
 
 .btn-success {
-    background-color: #FFD700; /* Rich Gold */
+    background-color: #FFD700 !important; /* Rich Gold */
     border: none;
     color: #252627; /* Dark Gray text color */
 }
@@ -75,19 +81,56 @@ label {
     background-color: #e6c200; /* Slightly darker shade of Rich Gold */
 }
 
-/* Checkbox styles */
-.program-checkbox {
-    margin-right: 10px;
-    opacity: 0.7;
-    transform: scale(1.2);
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px; /* Space between checkboxes */
 }
 
-.program-checkbox:checked {
-    opacity: 1;
-    transform: scale(1.2);
-    background-color: #FFD700; /* Rich Gold */
-    border-color: #FFD700; /* Rich Gold */
+.program-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
+
+.checkbox-custom {
+    display: inline-block;
+    width: 16px; /* Reduced width */
+    height: 16px; /* Reduced height */
+    background-color: #FFF5E1; /* Default background color */
+    border: 2px solid #4B2E2E; /* Default border color */
+    margin-right: 8px; /* Reduced margin */
+    opacity: 0.7;
+    transform: scale(1.1); /* Slightly reduced scale */
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+    vertical-align: middle;
+}
+
+.checkbox-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px; /* Reduced width */
+    height: 14px; /* Reduced height */
+    border: solid #4B2E2E; /* Checkmark color */
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transition: transform 0.3s;
+}
+
+.program-checkbox:checked + .checkbox-custom {
+    background-color: #FFD700 !important; /* Rich Gold */
+    border-color: #FFD700 !important; /* Rich Gold */
+}
+
+.program-checkbox:checked + .checkbox-custom::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
 
 /* Input styles */
 input {
@@ -103,13 +146,15 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #252627; /* Dark Gray background */
+    background-color: #FFF7D4; /* Dark Gray background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 1000;
-    color: #e2b263; /* Light Gold text color */
+    color: #252627; /* Light Gold text color */
+    border-left: #e2b263 25px solid;
+    /* border-top: #252627 15px solid; */
 }
 
 /* Confirmation data */
@@ -123,30 +168,33 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #004D26; /* Deep Emerald Green */
-    color: #e2b263; /* Light Gold text color */
+    background-color: #FFF7D4; /* Deep Emerald Green */
+    color: #252627; /* Light Gold text color */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
     display: none;
+    border-top: #252627 15px solid;
 }
 
 /* Warning messages */
 .cute-warning {
-    background-color: #FFD700; /* Rich Gold */
-    color: #252627; /* Dark Gray text color */
+    background-color: #c0392b; /* Rich Gold */
+    color: #FFF7D4; /* Dark Gray text color */
     border-radius: 5px;
     padding: 10px 20px;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 2px;
     font-size: 16px;
     margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease-in-out;
 }
 
-
+/* fjkhdkfhjksdfjkhsdfhsdjkfhsdjk */
 
 .styled-input {
     width: 100%;
