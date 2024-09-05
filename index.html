@@ -26,7 +26,7 @@
         <hr>
         <div class="form-group">
             <label for="classSelect">Select Class</label>
-            <select class="form-control styled-input" id="classSelect" name="classSelect" onchange="updateProgramOptions()">
+            <select class="form-control styled-select" id="classSelect" name="classSelect" onchange="updateProgramOptions()">
         <option value="Select Class">Select Class</option>
         <option value="PRE 1">PRE 1</option>
         <option value="Level 1A">Level 1A</option>
@@ -63,42 +63,70 @@
         <div class="form-group" id="programCheckboxes">
             <label>Select Program</label>
             <br>
+            <br>
             <div id="quranCheckboxContainer">
-                <label><input type="checkbox" class="program-checkbox" name="programQuran" value="Quran"
-            id="programQuran"> Quran Recitation</label>
+           
+            <label class="checkbox-container">
+                <input type="checkbox" class="program-checkbox" name="programQuran" value="Quran" id="programQuran">
+                <span class="checkbox-custom"></span>
+                Quran Recitation
+            </label>
+          
             </div>
-            <!-- <br> -->
-            <label><input type="checkbox" class="program-checkbox" name="programSong" value="Song"> Song</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programSpeech" value="Speech/Story"> Speech/Story Telling</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programMala" value="Mala"> Mala Recitation</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programGroupSong" value="Group Song"> Group
-        Song</label>
-            <br>
-            <label><input type="checkbox" class="program-checkbox" name="programDrawing" value="Drawing"> Drawing</label>
-            <br>
+        
+         
+            <label class="checkbox-container">
+                <input type="checkbox" class="program-checkbox" name="programSong" value="Song">
+                <span class="checkbox-custom"></span>
+                Song
+            </label>
+        
+            <label class="checkbox-container">
+                <input type="checkbox" class="program-checkbox" name="programSpeech" value="Speech/Story">
+                <span class="checkbox-custom"></span>
+                Speech/Story Telling
+            </label>
+     
+            <label class="checkbox-container">
+                <input type="checkbox" class="program-checkbox" name="programMala" value="Mala">
+                <span class="checkbox-custom"></span>
+                Mala Recitation
+            </label>
+          
+            <label class="checkbox-container">
+                <input type="checkbox" class="program-checkbox" name="programGroupSong" value="Group Song">
+                <span class="checkbox-custom"></span>
+                Group Song
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" class="program-checkbox" name="programDrawing" value="Drawing">
+                <span class="checkbox-custom"></span>
+                Drawing
+            </label>
+         
             <div id="programWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select at least one program.
             </div>
             <div id="drwingWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select one more program.
             </div>
         </div>
-        <button class="btn btn-primary col-12 " style="background-color: #138D75!important;" onclick="submitData()">Submit</button>
+        <button class="btn btn-primary col-12 " onclick="submitData()">Submit</button>
     </div>
-    <div id="confirmationBox" class="col-md-4 col-11" style="background-color: #1cdb49; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-        <p style="color: #155724; font-weight: bold; font-size: 18px; text-align: center;">Are you sure you want to submit? You can't edit after submission.</p>
+    <div id="confirmationBox" class="col-md-4 col-11" >
+        <p style=" font-weight: bold; font-size: 18px; text-align: center;">Are you sure you want to submit? <br> You can't edit after submission.</p>
+       <hr>
         <div id="confirmationData">
+            <hr>
             <!-- Data will be displayed here -->
         </div>
-        <div style="margin-top: 20px; text-align: center;">
-            <button class="btn btn-secondary" style="background-color: #155724; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; color: white;" onclick="cancelSubmission()">Cancel</button>
-            <button class="btn btn-success" style="background-color: #28A745; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; color: white;" onclick="confirmSubmission()">OK</button>
+        <hr>
+        <div style="margin-top: 20px; text-align:right;">
+            <button class="btn btn-secondary"  onclick="cancelSubmission()">Cancel</button>
+            <button class="btn btn-primary"  onclick="confirmSubmission()">OK</button>
         </div>
     </div>
 
-    <div id="thankYouMessage" class="col-11 col-md-4" style="display: none; background-color: #16A085; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); margin-top: 20px;">
-        <p id="thankYouText" style="color:#D4EFDF ; font-weight: bold; font-size: 20px;"></p>
+    <div id="thankYouMessage" class="col-11 col-md-4" >
+        <p id="thankYouText" style="font-weight: bold; font-size: 20px;"></p>
     </div>
 
 

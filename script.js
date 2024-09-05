@@ -112,13 +112,13 @@ function confirmSubmission() {
     document.getElementById('confirmationBox').style.display = 'none';
     document.getElementById('thankYouMessage').style.display = 'block';
     var thankYouText = document.getElementById('thankYouText');
-    thankYouText.innerHTML = `<div style="font-family:  cursive;">Thank you, <span style="color: #0B5345">${name}</span>
-    , for being a part of this celebration! All the best for your success in the Niamia Madrasa Milad Fest.</div>`;
+    thankYouText.innerHTML = `<div style="font-family:  cursive;">Thank you, <span style="color: #C07F00">${name}</span>
+    ,<br> for being a part of this celebration! All the best for your success in the Niamia Madrasa Milad Fest.</div>`;
 
     // Set a timeout to hide the thank you message after 2 seconds (2000 milliseconds)
     setTimeout(function() {
         document.getElementById('thankYouMessage').style.display = 'none';
-    }, 12000);
+    }, 16000);
 
 
     document.getElementById('name').value = '';
