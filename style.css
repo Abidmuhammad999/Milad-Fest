@@ -239,7 +239,3 @@ input {
     background-color: #FFF5E1; 
     color: #4B2E2E; /* Dark Brown text */
 }
-
-.styled-select option:hover{
-    background-color: #252627;
-}

@@ -42,18 +42,14 @@
             <div id="nameWarning" class="font-weight-bold cute-warning" style="display: none;">Please enter your full name.</div>
         </div>
 
-        <div class="form-group">
-            <label for="dob">Enter date of birth</label>
-            <input type="date" class="form-control styled-input" id="dob" placeholder="dd-mm-yyyy">
-            <div id="dobWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter your Date Of Birth.
-            </div>
+        <div class="form-group" style="position: relative;">
+            <label for="dob" id="dobLabel" class="dob-placeholder" style="position: absolute; top: 0; left: 10px; color: #aaa; pointer-events: none;">
+                dd-mm-yyyy
+            </label>
+            <input type="date" class="form-control styled-input" id="dob" style="padding-left: 10px;">
+            <div id="dobWarning" class="font-weight-bold cute-warning" style="display: none;">Please enter your Date Of Birth.</div>
         </div>
-        <!-- <div class="form-group">
-            <label for="dob">Enter date of birth</label>
-            <input type="text" class="form-control" id="dob" placeholder="DD-MM-YYYY">
-            <div id="dobWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter your Date Of Birth.
-            </div>
-        </div> -->
+        
         <div class="form-group">
             <label for="adno">Admission no</label>
             <input type="text" class="form-control styled-input" id="adno" placeholder="NZMP00000" oninput="this.value = this.value.toUpperCase();">
@@ -98,6 +94,8 @@
                 <span class="checkbox-custom"></span>
                 Group Song
             </label>
+            
+            
             <label class="checkbox-container">
                 <input type="checkbox" class="program-checkbox" name="programDrawing" value="Drawing">
                 <span class="checkbox-custom"></span>

@@ -95,7 +95,7 @@ function confirmSubmission() {
     };
 
     // Send the data as a JSON string to your Google Apps Script web app
-    fetch('https://script.google.com/macros/s/AKfycbxXlL5B1di5pIMf36flgb245w6KjsiozAqhtxOeT2c4OIPmvh0vadvLeGkNjk2dVOX--A/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbxKBLTiB-8otVKETN3ViQXMrH_8UOzugmH0CHFneIMzBCpNXHJ0xWNno7iMInc8CRkhNw/exec', {
             method: 'POST',
             body: JSON.stringify(data)
         })
