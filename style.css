@@ -2,6 +2,7 @@
 
 /* Body styles */
 body {
+    padding-top: 45px;
     color: #e2b263; /* Light Gold text color */
     background-color: #252627; /* Dark Gray background for the body */
     height: 100vh;
