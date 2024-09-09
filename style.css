@@ -4,6 +4,7 @@
 body {
     color: #e2b263; /* Light Gold text color */
     background-color: #252627; /* Dark Gray background for the body */
+    height: 100vh;
 }
 hr{
     border-top: 1px solid #e2b263;
