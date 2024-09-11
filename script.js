@@ -15,6 +15,7 @@ function submitData() {
     var adnoWarning = document.getElementById('adnoWarning');
 
     var adnoPattern = /^NZMP\d{5}$/;
+    var adnoPattern2 = /^NZMG\d{5}$/;
 
     // Check if only "Drawing" is selected
     if (selectedPrograms.length === 1 && selectedPrograms[0] === 'Drawing') {
@@ -44,7 +45,7 @@ function submitData() {
     } else {
         document.getElementById('dobWarning').style.display = 'none';
     }
-    if (!adno.match(adnoPattern)) {
+    if (!adno.match(adnoPattern) && !adno.match(adnoPattern2)) {
         adnoWarning.style.display = 'block';
         return;
     } else {
