@@ -197,3 +197,9 @@ function capitalizeFirstLetter(input) {
     }
     input.value = words.join(' ');
 }
+
+function preventSpaces(event) {
+    if (event.key === " ") {
+        event.preventDefault();  // Prevent the space character from being entered
+    }
+}

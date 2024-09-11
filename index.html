@@ -53,8 +53,8 @@
         
         <div class="form-group">
             <label for="adno">Admission no</label>
-            <input type="text" class="form-control styled-input" id="adno" placeholder="NZMP00000" oninput="this.value = this.value.toUpperCase();">
-            <div id="adnoWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter a valid Admission number between NZMP00000 and NZMP12345</div>
+            <input type="text" class="form-control styled-input" id="adno" placeholder="NZMP00000" oninput="this.value = this.value.toUpperCase();" onkeydown="preventSpaces(event)">
+            <div id="adnoWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter a valid admission number between NZMP00000 and NZMP12345, or remove any spaces.</div>
 
         </div>
         <div class="form-group" id="programCheckboxes">
