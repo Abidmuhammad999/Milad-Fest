@@ -1,14 +1,25 @@
-/* style.css */
+/* Define color variables at the root */
+:root {
+    --primary-color: #C07F00; /* Deep Emerald Green */
+    --secondary-color: #FFD700; /* Rich Gold */
+    --accent-color: #FFF5E1; /* Cream */
+    --text-color: #4B2E2E; /* Dark Brown */
+    --background-color: #252627; /* Dark Gray */
+    --gold-text: #e2b263; /* Light Gold */
+    --hover-primary-color: #624305; /* Slightly darker Emerald */
+    --hover-secondary-color: #3e1f1f; /* Slightly darker Brown */
+    --hover-success-color: #e6c200; /* Slightly darker Gold */
+}
 
 /* Body styles */
 body {
     padding-top: 45px;
-    color: #e2b263; /* Light Gold text color */
-    background-color: #252627; /* Dark Gray background for the body */
+    color: var(--gold-text); /* Light Gold text color */
+    background-color: var(--background-color); /* Dark Gray background */
     height: 100vh;
 }
-hr{
-    border-top: 1px solid #e2b263;
+hr {
+    border-top: 1px solid var(--gold-text);
 }
 /* Background image */
 .background-image {
@@ -30,7 +41,7 @@ hr{
     backdrop-filter: blur(2px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #e2b263; /* Light Gold text color for better visibility on Dark Gray background */
+    color: var(--gold-text); /* Light Gold text color for better visibility */
 }
 
 /* Form group */
@@ -42,27 +53,27 @@ hr{
 label {
     font-weight: bold;
     text-transform: capitalize;
-    color: #e2b263; /* Light Gold */
+    color: var(--gold-text); /* Light Gold */
 }
 
 /* Button styles */
 .btn-primary {
     margin-top: 20px;
-    background-color: #C07F00; 
+    background-color:rgb(192, 127, 0); 
     border: none;
-    color: #FFF7D4; 
+    color: var(--accent-color); 
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .btn-primary:hover {
-    background-color: #624305 /* Slightly darker shade of Deep Emerald Green */
+    background-color: var(--hover-primary-color); /* Slightly darker Emerald */
 }
 
 .btn-secondary {
-    background-color: #4B2E2E; /* Dark Brown */
+    background-color: var(--text-color); /* Dark Brown */
     border: none;
-    color: #e2b263;
+    color: var(--gold-text);
     margin-top: 20px;
     border-radius: 5px;
     font-weight: bold;
@@ -70,24 +81,25 @@ label {
 }
 
 .btn-secondary:hover {
-    background-color: #3e1f1f; /* Slightly darker shade of Dark Brown */
+    background-color: var(--hover-secondary-color); /* Slightly darker Brown */
 }
 
 .btn-success {
-    background-color: #FFD700 !important; /* Rich Gold */
+    background-color: var(--secondary-color) !important; /* Rich Gold */
     border: none;
-    color: #252627; /* Dark Gray text color */
+    color: var(--background-color); /* Dark Gray text */
 }
 
 .btn-success:hover {
-    background-color: #e6c200; /* Slightly darker shade of Rich Gold */
+    background-color: var(--hover-success-color); /* Slightly darker Gold */
 }
 
+/* Checkbox styles */
 .checkbox-container {
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 10px; /* Space between checkboxes */
+    margin-bottom: 10px;
 }
 
 .program-checkbox {
@@ -99,13 +111,13 @@ label {
 
 .checkbox-custom {
     display: inline-block;
-    width: 16px; /* Reduced width */
-    height: 16px; /* Reduced height */
-    background-color: #FFF5E1; /* Default background color */
-    border: 2px solid #4B2E2E; /* Default border color */
-    margin-right: 8px; /* Reduced margin */
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color); /* Default background color */
+    border: 2px solid var(--text-color); /* Default border color */
+    margin-right: 8px;
     opacity: 0.7;
-    transform: scale(1.1); /* Slightly reduced scale */
+    transform: scale(1.1);
     position: relative;
     transition: background-color 0.3s, border-color 0.3s;
     vertical-align: middle;
@@ -116,30 +128,29 @@ label {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px; /* Reduced width */
-    height: 14px; /* Reduced height */
-    border: solid #4B2E2E; /* Checkmark color */
+    width: 8px;
+    height: 14px;
+    border: solid var(--text-color); /* Checkmark color */
     border-width: 0 2px 2px 0;
     transform: translate(-50%, -50%) rotate(45deg) scale(0);
     transition: transform 0.3s;
 }
 
 .program-checkbox:checked + .checkbox-custom {
-    background-color: #FFD700 !important; /* Rich Gold */
-    border-color: #FFD700 !important; /* Rich Gold */
+    background-color: var(--secondary-color) !important; /* Rich Gold */
+    border-color: var(--secondary-color) !important; /* Rich Gold */
 }
 
 .program-checkbox:checked + .checkbox-custom::after {
     transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
 
-
 /* Input styles */
 input {
-    background-color: transparent; /* Transparent background */
+    background-color: transparent;
     font-weight: bold;
-    border: 1px solid #004D26; /* Deep Emerald Green border */
-    color: #e2b263; /* Light Gold text color */
+    border: 1px solid var(--secondary-color); /* Deep Emerald Green border */
+    color: var(--gold-text); /* Light Gold text color */
 }
 
 /* Confirmation box */
@@ -148,20 +159,14 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FFF7D4; /* Dark Gray background */
+    background-color: var(--accent-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 1000;
-    color: #252627; /* Light Gold text color */
-    border-left: #e2b263 25px solid;
-    /* border-top: #252627 15px solid; */
-}
-
-/* Confirmation data */
-#confirmationData {
-    margin-top: 10px;
+    color: var(--background-color);
+    border-left: var(--gold-text) 25px solid;
 }
 
 /* Thank you message */
@@ -170,22 +175,21 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FFF7D4; /* Deep Emerald Green */
-    color: #252627; /* Light Gold text color */
+    background-color: var(--accent-color);
+    color: var(--background-color);
     padding: 20px;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 0 10px rgba(248, 248, 248, 0.523);
     margin-top: 20px;
     display: none;
-    border-top: #252627 25px solid ;
-    /* border-bottom: #252627 25px solid ; */
+    border-top: var(--background-color) 25px solid;
 }
 
 /* Warning messages */
 .cute-warning {
-    background-color: #c0392b; /* Rich Gold */
-    color: #FFF7D4; /* Dark Gray text color */
+    background-color: #c0392b;
+    color: var(--accent-color);
     border-radius: 5px;
     padding: 10px 20px;
     text-align: center;
@@ -197,15 +201,13 @@ input {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* fjkhdkfhjksdfjkhsdfhsdjkfhsdjk */
-
+/* Input and Select fields */
 .styled-input {
     width: 100%;
-
-    border: 2px solid #004D26; /* Deep Emerald Green border */
+    border: 2px solid var(--primary-color);
     border-radius: 5px;
-    background-color: #FFF5E1; /* Cream background for input */
-    color: #4B2E2E; /* Dark Brown text */
+    background-color: var(--accent-color);
+    color: var(--text-color);
     font-size: 16px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     outline: none;
@@ -213,31 +215,31 @@ input {
 }
 
 .styled-input::placeholder {
-    color: #4B2E2E; /* Dark Brown placeholder text */
+    color: var(--text-color);
 }
 
 .styled-input:focus {
-    border-color: #FFD700 ; /* Rich Gold border on focus */
+    border-color: var(--secondary-color);
 }
 
 .styled-select {
     width: 100%;
-    border: 2px solid #004D26; /* Deep Emerald Green border */
+    border: 2px solid var(--primary-color);
     border-radius: 5px;
-    background-color: #FFF5E1; /* Cream background for select */
-    color: #4B2E2E; /* Dark Brown text */
+    background-color: var(--accent-color);
+    color: var(--text-color);
     font-size: 16px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     outline: none;
-    appearance: none; /* Remove default styling */
+    appearance: none;
     transition: border-color 0.3s ease;
 }
 
 .styled-select:focus {
-    border-color: #FFD700; /* Rich Gold border on focus */
+    border-color: var(--secondary-color);
 }
 
 .styled-select option {
-    background-color: #FFF5E1; 
-    color: #4B2E2E; /* Dark Brown text */
+    background-color: var(--accent-color);
+    color: var(--text-color);
 }

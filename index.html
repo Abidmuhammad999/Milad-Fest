@@ -1,139 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <base target="_top">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nizamia Madrasa Milad Fest Registration</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Define theme variables */
+        :root {
+            --primary-bg: #1c1c1c; /* Darker gray background */
+            --primary-text: #FFD700; /* Formal gold text */
+            --secondary-bg: #2a2a2a; /* Slightly lighter gray for contrast */
+            --secondary-text: #E0E0E0; /* Light gray text */
+            --border-color: #BDAE5E; /* Subtle gold border */
+            --hover-color: #FFD700; /* Hover gold color */
+        }
+
+        /* Body styles */
+        body {
+            background-color: var(--primary-bg);
+            color: var(--secondary-text);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--secondary-bg);
+            color: var(--primary-text);
+            text-align: center;
+            padding: 20px;
+        }
+
+       
+        hr {
+            border-top: 1px solid var(--primary-text);
+        }
+
+        /* Container styles */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            flex-grow: 1;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        /* Button styles */
+        .btn {
+            background-color: var(--primary-text);
+            color: var(--primary-bg);
+            padding: 12px 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-bg);
+        }
+
+      
+    </style>
 </head>
 
 <body>
-    <div class="background-image col-12 vh-100"></div>
-    <div class="container   m-auto p-4 col-md-5 col-11">
-
+    <header>
         <hr>
-        <h3 class="text-center" style="font-family: 'Roboto Slab', serif;">NIZAMIA MADRASA</h3>
+        <h2 class="text-center" style="font-family: 'Roboto Slab', serif;">NIZAMIA MADRASA</h2>
 
-        <h3 class="mb-4 text-center" style="font-family: 'Righteous', cursive;">MILAD FEST - 2024</h3>
+        <h2 class="mb-4 text-center" style="font-family: 'Righteous', cursive;">MILAD FEST - 2024</h2>
         <hr>
-        <div class="form-group">
-            <label for="classSelect">Select Class</label>
-            <select class="form-control styled-select" id="classSelect" name="classSelect" onchange="updateProgramOptions()">
-        <option value="Select Class">Select Class</option>
-        <option value="PRE 1">PRE 1</option>
-        <option value="Level 1A">Level 1A</option>
-        <option value="Level 2">Level 2</option>
-        <option value="Level 3">Level 3</option>
-        <option value="Level 4">Level 4</option>
-        <option value="General Batch">General Batch</option>
-      </select>
-            <div id="classWarning" class="font-weight-bold cute-warning " style="display: none;">Please select a class.</div>
-        </div>
-        <div class="form-group">
-            <label for="name">Enter name</label>
-            <input type="text" class="form-control styled-input" id="name" placeholder="Enter your Full name" oninput="capitalizeFirstLetter(this)">
-            <div id="nameWarning" class="font-weight-bold cute-warning" style="display: none;">Please enter your full name.</div>
-        </div>
+    </header>
 
-        <div class="form-group" style="position: relative;">
-            <label for="dob" id="dobLabel" class="dob-placeholder" >
-                Date Of Birth
-            </label>
-            <input type="date" class="form-control styled-input" id="dob" style="padding-left: 10px;">
-            <div id="dobWarning" class="font-weight-bold cute-warning" style="display: none;">Please enter your Date Of Birth.</div>
-        </div>
+    <div class="container">
+        <p>Thank you for your interest! Registration for Milad Fest 2024 has officially closed. We truly appreciate your support and look forward to welcoming you at future events. Stay tuned for updates!</p>
         
-        <div class="form-group">
-            <label for="adno">Admission no</label>
-            <input type="text" class="form-control styled-input" id="adno" placeholder="NZMP00000" oninput="this.value = this.value.toUpperCase();" onkeydown="preventSpaces(event)">
-            <div id="adnoWarning" class="font-weight-bold cute-warning" style=" display: none;">Please enter a valid admission number between NZMP00000 NZMG00000 and NZMP12345 or NZMG12345, or remove any spaces.</div>
-
-        </div>
-        <div class="form-group" id="programCheckboxes">
-            <label>Select Program</label>
-            <br>
-            <br>
-            <div id="quranCheckboxContainer">
-           
-            <label class="checkbox-container">
-                <input type="checkbox" class="program-checkbox" name="programQuran" value="Quran" id="programQuran">
-                <span class="checkbox-custom"></span>
-                Quran Recitation
-            </label>
-          
-            </div>
-        
-         
-            <label class="checkbox-container">
-                <input type="checkbox" class="program-checkbox" name="programSong" value="Song">
-                <span class="checkbox-custom"></span>
-                Song
-            </label>
-        
-            <label class="checkbox-container">
-                <input type="checkbox" class="program-checkbox" name="programSpeech" value="Speech/Story">
-                <span class="checkbox-custom"></span>
-                Speech/Story Telling
-            </label>
-     
-            <label class="checkbox-container">
-                <input type="checkbox" class="program-checkbox" name="programMala" value="Mala">
-                <span class="checkbox-custom"></span>
-                Mala Recitation
-            </label>
-          
-            <label class="checkbox-container">
-                <input type="checkbox" class="program-checkbox" name="programGroupSong" value="Group Song">
-                <span class="checkbox-custom"></span>
-                Group Song
-            </label>
-            
-            
-            <label class="checkbox-container">
-                <input type="checkbox" class="program-checkbox" name="programDrawing" value="Drawing">
-                <span class="checkbox-custom"></span>
-                Drawing/Painting
-            </label>
-         
-            <div id="programWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select at least one program.
-            </div>
-            <div id="drwingWarning" class="font-weight-bold cute-warning" style=" display: none;">Please select one more program.
-            </div>
-        </div>
-        <button class="btn btn-primary col-12 " onclick="submitData()">Submit</button>
+        <a href="https://www.nizamiamadrasa.in/" class="btn">Return to Home</a>
     </div>
-    <div id="confirmationBox" class="col-md-4 col-11" >
-        <p style=" font-weight: bold; font-size: 18px; text-align: center;">Are you sure you want to submit? <br> You can't edit after submission.</p>
-       <hr>
-        <div id="confirmationData">
-            <hr>
-            <!-- Data will be displayed here -->
-        </div>
-        <hr>
-        <div style="margin-top: 20px; text-align:right;">
-            <button class="btn btn-secondary"  onclick="cancelSubmission()">Cancel</button>
-            <button class="btn btn-primary"  onclick="confirmSubmission()">OK</button>
-        </div>
-    </div>
-
-    <div id="thankYouMessage" class="col-11 col-md-4" >
-        <p id="thankYouText" style="font-weight: bold; font-size: 20px;"></p>
-    </div>
-
-
-    <!-- Include Bootstrap JS and your custom script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 </body>
 
 </html>

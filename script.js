@@ -13,6 +13,7 @@ function submitData() {
     var dob = document.getElementById('dob').value;
     var adno = document.getElementById('adno').value;
     var adnoWarning = document.getElementById('adnoWarning');
+    var adnoWarning2 = document.getElementById('adnoWarning2');
 
     var adnoPattern = /^NZMP\d{5}$/;
     var adnoPattern2 = /^NZMG\d{5}$/;
@@ -45,12 +46,40 @@ function submitData() {
     } else {
         document.getElementById('dobWarning').style.display = 'none';
     }
-    if (!adno.match(adnoPattern) && !adno.match(adnoPattern2)) {
-        adnoWarning.style.display = 'block';
-        return;
-    } else {
+    function validateAdmissionNumber() {
+        var classSelect = document.getElementById("classSelect");
+        var adnoInput = document.getElementById("adno");
+        var adno = adnoInput.value;
+        var adnoWarning = document.getElementById("adnoWarning");
+        var adnoWarning2 = document.getElementById("adnoWarning2");
+        
+        // Define your patterns
+        var adnoPattern = /^NZMP\d{5}$/; // Pattern for NZMP
+        var adnoPattern2 = /^NZMG\d{5}$/; // Pattern for NZMG
+    
+        // Get the selected class
+        var selectedClass = classSelect.value;
+    
+        // Hide both warnings initially
         adnoWarning.style.display = 'none';
+        adnoWarning2.style.display = 'none';
+    
+        // Check if "General Batch" is selected
+        if (selectedClass === "General Batch") {
+            // Validate against adnoPattern2 for General Batch
+            if (!adno.match(adnoPattern2)) {
+                adnoWarning2.style.display = 'block';  // Show adnoWarning2 for invalid General Batch admission numbers
+                return;
+            }
+        } else {
+            // Validate against adnoPattern for other classes
+            if (!adno.match(adnoPattern)) {
+                adnoWarning.style.display = 'block';  // Show adnoWarning for invalid non-General Batch admission numbers
+                return;
+            }
+        }
     }
+    
     if (selectedPrograms.length === 0) {
         document.getElementById('programWarning').style.display = 'block';
         return;
@@ -129,18 +158,27 @@ function confirmSubmission() {
 }
 
 
-function
-updateProgramOptions() {
-    var classSelect = document.getElementById('classSelect');
-    var selectedClass = classSelect.value;
+function updateProgramOptions() {
+    var classSelect = document.getElementById("classSelect");
+    var adnoInput = document.getElementById("adno");
     var quranCheckboxContainer = document.getElementById('quranCheckboxContainer');
+    var selectedClass = classSelect.value;
 
+    // Handle showing/hiding the Quran checkbox
     if (selectedClass === 'Level 1A' || selectedClass === 'PRE 1') {
         quranCheckboxContainer.style.display = 'none';
     } else {
         quranCheckboxContainer.style.display = 'block';
     }
+
+    // Handle placeholder change for admission number based on selected class
+    if (selectedClass === "General Batch") {
+        adnoInput.placeholder = "NZMG00000";
+    } else {
+        adnoInput.placeholder = "NZMP00000";
+    }
 }
+
 
 function getSelectedPrograms() {
     var programCheckboxes = document.querySelectorAll('.program-checkbox');
